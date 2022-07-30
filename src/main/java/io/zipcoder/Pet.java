@@ -1,10 +1,8 @@
 package io.zipcoder;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
-public class Pet {
+public class Pet implements Comparable<Pet> , Comparator<Pet> {
     private String name;
     private String petType;
     private int age;
@@ -86,7 +84,13 @@ public class Pet {
 //        System.out.println(getName() + " speaks: " + petSpeaks());
     }
 
+    public int compareTo(Pet pet) {
+        return pet.name.compareTo(this.name);
+    }
 
+    public int compare(Pet o1, Pet o2) {
+        return o2.compareTo(o1);
+    }
 }
 
 
